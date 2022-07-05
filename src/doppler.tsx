@@ -1,5 +1,5 @@
 import {ActionPanel, Form} from '@raycast/api'
-import {ShareSecretAction} from './shareSecretAction'
+import {ShareSecretAction} from '@components/doppler/shareSecretAction'
 
 export default function Command() {
     return (
