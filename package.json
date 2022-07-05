@@ -1,0 +1,41 @@
+{
+    "$schema": "https://www.raycast.com/schemas/extension.json",
+    "name": "hello-world",
+    "title": "Hello World",
+    "description": "Hello raycast API!",
+    "icon": "command-icon.png",
+    "author": "Psyho",
+    "license": "MIT",
+    "commands": [
+        {
+            "name": "list",
+            "title": "Show List and Detail",
+            "description": "Template for showing a static list and a detail view",
+            "mode": "view"
+        },
+        {
+            "name": "doppler",
+            "title": "Share secrets via doppler",
+            "description": "Share secrets",
+            "mode": "view"
+        }
+    ],
+    "dependencies": {
+        "@raycast/api": "^1.37.1",
+        "got": "^12.1.0"
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^5.0.0",
+        "@typescript-eslint/parser": "^5.0.0",
+        "eslint": "^7.32.0",
+        "eslint-config-prettier": "^8.3.0",
+        "prettier": "^2.5.1",
+        "typescript": "^4.4.3"
+    },
+    "scripts": {
+        "build": "ray build -e dist",
+        "dev": "ray develop",
+        "fix-lint": "ray lint --fix",
+        "lint": "ray lint"
+    }
+}
