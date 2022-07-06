@@ -10,5 +10,10 @@ interface Todo {
     isCompleted: boolean
 }
 
+interface Timer {
+    id: string
+    timeStr: string
+}
+
 export {Filter}
-export type {Todo}
+export type {Todo, Timer}

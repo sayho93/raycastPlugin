@@ -16,7 +16,7 @@
         {
             "name": "doppler",
             "icon": "doppler-icon.png",
-            "title": "Share secrets via doppler",
+            "title": "doppler",
             "description": "Share secrets",
             "mode": "view"
         },
