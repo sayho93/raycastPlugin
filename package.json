@@ -29,14 +29,14 @@
         },
         {
             "name": "startTimer",
-            "icon": "hourglass-icon.png",
+            "icon": "hourglass-icon-white.png",
             "title": "start timer",
             "description": "Set Horo timer",
             "mode": "view"
         },
         {
             "name": "deleteTimer",
-            "icon": "hourglass-icon.png",
+            "icon": "hourglass-icon-white.png",
             "title": "delete timer",
             "description": "Delete Horo timer",
             "mode": "no-view"

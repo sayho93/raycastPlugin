@@ -1,4 +1,4 @@
-import {Action, Icon, Toast, showToast} from '@raycast/api'
+import {Action, Icon, Toast, showToast, closeMainWindow} from '@raycast/api'
 import {runAppleScript} from 'run-applescript'
 
 export function CreateNewTimer() {
@@ -13,6 +13,7 @@ export function CreateNewTimer() {
 
         const toast = await showToast({
             style: Toast.Style.Animated,
+
             title: 'Starting timer...',
         })
 
@@ -34,6 +35,7 @@ export function CreateNewTimer() {
             toast.style = Toast.Style.Success
             toast.title = 'Success'
             toast.message = 'Timer is running'
+            await closeMainWindow()
         } catch (error) {
             console.log(error)
             toast.style = Toast.Style.Failure
