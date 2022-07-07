@@ -1,7 +1,7 @@
 {
     "$schema": "https://www.raycast.com/schemas/extension.json",
-    "name": "hello-world",
-    "title": "Hello World",
+    "name": "psyho",
+    "title": "local extensions",
     "description": "Hello raycast API!",
     "icon": "command-icon.png",
     "author": "Psyho",

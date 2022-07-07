@@ -27,7 +27,7 @@ export function CreateNewTimer(props: {timeStr?: string; addHistory: (timeStr: s
 
                     tell application "System Events" to tell process "Horo"
                         click menu bar item 1 of menu bar 2
-                        keystroke "${timeStr}"
+                        set value of text field 1 of window 1 to "${timeStr}"
                         key code 36
                     end tell
                 end tell

@@ -9,16 +9,10 @@ export default async function Command() {
 
     try {
         await runAppleScript(`
-            tell application "Horo"
-                if not application "Horo" is running then
-                    activate
-                end if
-
-                tell application "System Events" to tell process "Horo"
-                    click menu bar item 1 of menu bar 2
-                    key code 51
-                    key code 53
-                end tell
+            tell application "System Events" to tell process "Horo"
+                click menu bar item 1 of menu bar 2
+                set ps to description of UI element 4 of front window
+                click UI element 4 of front window
             end tell
         `)
 
