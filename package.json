@@ -40,6 +40,13 @@
             "title": "delete timer",
             "description": "Delete Horo timer",
             "mode": "no-view"
+        },
+        {
+            "name": "urlShortener",
+            "icon": "shortener-icon.png",
+            "title": "url shortener",
+            "description": "Shorten your URL",
+            "mode": "view"
         }
     ],
     "dependencies": {
