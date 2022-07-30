@@ -22,6 +22,7 @@ export function CreateNewTimer(props: {timeStr?: string; addHistory: (timeStr: s
             await runAppleScript(`
                 tell application "Horo"
                     if not application "Horo" is running then
+                        launch
                         activate
                     end if
 
@@ -29,6 +30,7 @@ export function CreateNewTimer(props: {timeStr?: string; addHistory: (timeStr: s
                         click menu bar item 1 of menu bar 2
                         set value of text field 1 of window 1 to "${timeStr}"
                         key code 36
+                        set flat to true
                     end tell
                 end tell
             `)
