@@ -20,17 +20,20 @@ export function CreateNewTimer(props: {timeStr?: string; addHistory: (timeStr: s
 
         try {
             await runAppleScript(`
+                on isRunning(appName)
+                    tell application "System Events" to (name of processes) contains appName
+                end isRunning
+            
+                property flag = isRunning("Horo")
+        
+                activate application "Horo"
                 tell application "Horo"
-                    if not application "Horo" is running then
-                        launch
-                        activate
-                    end if
-
                     tell application "System Events" to tell process "Horo"
-                        click menu bar item 1 of menu bar 2
+                        if flag then
+                            click menu bar item 1 of menu bar 2
+                        end if
                         set value of text field 1 of window 1 to "${timeStr}"
                         key code 36
-                        set flat to true
                     end tell
                 end tell
             `)
