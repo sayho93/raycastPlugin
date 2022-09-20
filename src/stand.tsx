@@ -4,21 +4,29 @@ import {runAppleScript} from 'run-applescript'
 export default async function Command() {
     const toast = await showToast({
         style: Toast.Style.Animated,
-        title: 'Deleting timer...',
+        title: 'Adjusting Desk...',
     })
 
     try {
-        await runAppleScript(`
-            if not application "Horo" is running then
-                error number -128
-            end if
+        const res = await runAppleScript(`
+          on isRunning(appName)
+              tell application "System Events" to (name of processes) contains appName
+          end isRunning
 
-            tell application "System Events" to tell process "Horo"
-                click menu bar item 1 of menu bar 2
-                set ps to description of UI element 4 of front window
-                click UI element 4 of front window
-            end tell
+          property flag = isRunning("Desk Remote Control")
+
+          Log flag
+
+          #activate application "Desk Remote Control"
+          #tell application "Desk Remote Control"
+          #    tell application "System Events" to tell process "Desk Remote Control"
+          #        if flag then
+          #            click menu bar item 1 of menu bar 2
+          #        end if
+          #    end tell
+          #end tell
         `)
+        console.log(res)
 
         toast.style = Toast.Style.Success
         toast.title = 'Success'
@@ -35,6 +43,7 @@ export default async function Command() {
 
         const err = error.message.split('.')[1]
         if (err) {
+          console.log(err)
             const errCode = err.replace(/[()]/g, '')
             console.log(errCode)
             toast.title = 'Horo timer is not running'

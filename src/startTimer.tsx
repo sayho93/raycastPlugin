@@ -1,4 +1,4 @@
-import {Form, ActionPanel, LocalStorage, List} from '@raycast/api'
+import {Form, ActionPanel, LocalStorage} from '@raycast/api'
 import {CreateNewTimer} from './components/horoTimer/createNewTimer'
 import {useEffect, useState} from 'react'
 import {Timer} from './types'
